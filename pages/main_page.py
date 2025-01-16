@@ -10,6 +10,7 @@ class MainPage(BasePage):
 
     def open_main(self):
         self.open_url(' https://soft.reelly.io')
+        sleep(5)
 
     def login(self, email, password):
         self.input_text(email, *self.EMAIL_INPUT)

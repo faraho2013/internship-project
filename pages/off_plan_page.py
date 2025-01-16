@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
 class OffPlanPage(BasePage):
-    FIRST_PRODUCT = (By.CSS_SELECTOR, "[class*='name_object_block']")
+    FIRST_PRODUCT = (By.CSS_SELECTOR, "[class='project-name']")
     VISUALIZATION_OPTION = (By.CSS_SELECTOR, "[class*='tabs-menu-project w-tab-menu']")
 
     def open_first_off_plan_product(self):

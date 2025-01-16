@@ -12,13 +12,13 @@ def browser_init(context, scenario_name):
     """
     :param context: Behave context
     """
-    driver_path = ChromeDriverManager().install()
-    service = Service(driver_path)
-    context.driver = webdriver.Chrome(service=service)
-
-    # driver_path = GeckoDriverManager().install()
+    # driver_path = ChromeDriverManager().install()
     # service = Service(driver_path)
-    # context.driver = webdriver.Firefox(service=service)
+    # context.driver = webdriver.Chrome(service=service)
+
+    driver_path = GeckoDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Firefox(service=service)
 
     ### HEADLESS MODE ####
     # options = webdriver.ChromeOptions()

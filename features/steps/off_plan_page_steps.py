@@ -1,3 +1,4 @@
+from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
@@ -10,6 +11,7 @@ SELECTED_OPTION = (By.CSS_SELECTOR, "[class*='w-tab-menu'] [class*='w--current']
 @when('Click on first off plan product')
 def open_first_off_plan_product(context):
     context.app.off_plan_page.open_first_off_plan_product()
+    sleep(10)
 
 
 @then('Verify one of the three options is available')
