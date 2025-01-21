@@ -12,13 +12,13 @@ def browser_init(context, scenario_name):
     """
     :param context: Behave context
     """
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
-
-    driver_path = GeckoDriverManager().install()
+    driver_path = ChromeDriverManager().install()
     service = Service(driver_path)
-    context.driver = webdriver.Firefox(service=service)
+    context.driver = webdriver.Chrome(service=service)
+
+    # driver_path = GeckoDriverManager().install()
+    # service = Service(driver_path)
+    # context.driver = webdriver.Firefox(service=service)
 
     ### HEADLESS MODE ####
     # options = webdriver.ChromeOptions()
@@ -29,7 +29,7 @@ def browser_init(context, scenario_name):
     #     service=service
     # )
 
-    ### BROWSERSTACK ###
+    ## BROWSERSTACK ###
     # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
     # bs_user = 'farah_Weawls'
     # bs_key = 'BJ2JLacYr4jbvzMtQnt8'
@@ -37,14 +37,14 @@ def browser_init(context, scenario_name):
     #
     # options = Options()
     # bstack_options = {
-    #     "os" : "Windows",
-    #     "osVersion" : "11",
-    #     'browserName': 'chrome',
+    #     "os" : "OS X",
+    #     "osVersion" : "Monterey",
+    #     'browserName': 'Safari',
     #     'sessionName': scenario_name,
     # }
     # options.set_capability('bstack:options', bstack_options)
     # context.driver = webdriver.Remote(command_executor=url, options=options)
-
+    #
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.driver.wait = WebDriverWait(context.driver, 15)
