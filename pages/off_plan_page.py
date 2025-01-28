@@ -6,6 +6,7 @@ class OffPlanPage(BasePage):
     VISUALIZATION_OPTION = (By.CSS_SELECTOR, "[class*='tabs-menu-project w-tab-menu']")
 
     def open_first_off_plan_product(self):
+        self.driver.execute_script("window.scrollBy(0,200)", "")
         self.click(*self.FIRST_PRODUCT)
 
     def visualization_option_is_available(self):

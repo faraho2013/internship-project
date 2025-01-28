@@ -6,7 +6,8 @@ class MainPage(BasePage):
     EMAIL_INPUT = (By.ID, 'email-2')
     PASSWORD_INPUT = (By.ID, 'field')
     CONTINUE_BUTTON = (By.CSS_SELECTOR, "[class*='login-button']")
-    OFF_PLAN = (By.XPATH, "//*[text()='Off-plan']")
+    # OFF_PLAN = (By.XPATH, "//*[text()='Off-plan']")
+    OFF_PLAN = (By.CSS_SELECTOR, "[class*='menu-text-link-leaderboard w--current']")
 
     def open_main(self):
         self.open_url(' https://soft.reelly.io')

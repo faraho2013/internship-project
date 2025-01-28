@@ -15,5 +15,6 @@ def login(context, email, password):
 
 @when('Click on “off plan" at the left side menu')
 def open_off_plan(context):
+    sleep(6)
     context.app.main_page.open_off_plan()
     sleep(6)
